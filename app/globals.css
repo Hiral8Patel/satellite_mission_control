@@ -1,0 +1,362 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to space-themed color palette for mission control interface */
+  --background: #0a0a0f;
+  --foreground: #ffffff;
+  --card: rgba(15, 23, 42, 0.8);
+  --card-foreground: #ffffff;
+  --popover: rgba(0, 0, 0, 0.9);
+  --popover-foreground: #ffffff;
+  --primary: #0891b2;
+  --primary-foreground: #ffffff;
+  --secondary: #1e293b;
+  --secondary-foreground: #ffffff;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #d97706;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #334155;
+  --input: #1e293b;
+  --ring: rgba(8, 145, 178, 0.5);
+  --chart-1: #0891b2;
+  --chart-2: #d97706;
+  --chart-3: #dc2626;
+  --chart-4: #22d3ee;
+  --chart-5: #a855f7;
+  --radius: 0.5rem;
+  --sidebar: #0f172a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #0891b2;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d97706;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #334155;
+  --sidebar-ring: rgba(8, 145, 178, 0.5);
+}
+
+.dark {
+  /* Enhanced dark mode for space mission control */
+  --background: #0a0a0f;
+  --foreground: #ffffff;
+  --card: rgba(15, 23, 42, 0.8);
+  --card-foreground: #ffffff;
+  --popover: rgba(0, 0, 0, 0.9);
+  --popover-foreground: #ffffff;
+  --primary: #0891b2;
+  --primary-foreground: #ffffff;
+  --secondary: #1e293b;
+  --secondary-foreground: #ffffff;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #d97706;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #334155;
+  --input: #1e293b;
+  --ring: rgba(8, 145, 178, 0.5);
+  --chart-1: #0891b2;
+  --chart-2: #d97706;
+  --chart-3: #dc2626;
+  --chart-4: #22d3ee;
+  --chart-5: #a855f7;
+  --radius: 0.5rem;
+  --sidebar: #0f172a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #0891b2;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #d97706;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #334155;
+  --sidebar-ring: rgba(8, 145, 178, 0.5);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Adding animated cosmic background with nebula and stars */
+    background: radial-gradient(ellipse at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 40% 80%, rgba(120, 219, 226, 0.2) 0%, transparent 50%),
+      linear-gradient(135deg, #0a0a0f 0%, #1a0b2e 25%, #16213e 50%, #0f3460 75%, #0a0a0f 100%);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Enhanced cosmic background with animated elements */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
+      radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: sparkle 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Adding moving cosmic dust particles */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    background-image: radial-gradient(circle at 25% 25%, rgba(8, 145, 178, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(217, 119, 6, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 10%, rgba(34, 211, 238, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 10% 90%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+    animation: cosmicDrift 60s ease-in-out infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @keyframes sparkle {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-10px) rotate(180deg);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes cosmicDrift {
+    0%,
+    100% {
+      transform: translate(-10%, -10%) rotate(0deg);
+    }
+    25% {
+      transform: translate(-15%, -5%) rotate(90deg);
+    }
+    50% {
+      transform: translate(-5%, -15%) rotate(180deg);
+    }
+    75% {
+      transform: translate(-20%, -10%) rotate(270deg);
+    }
+  }
+
+  /* Enhanced space-themed animations and effects */
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(8, 145, 178, 0.3);
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    from {
+      box-shadow: 0 0 10px rgba(8, 145, 178, 0.2);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(8, 145, 178, 0.6);
+    }
+  }
+
+  .grid-pattern {
+    background-image: linear-gradient(rgba(8, 145, 178, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(8, 145, 178, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Enhanced starfield with multiple layers for depth */
+  .stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow:
+      1780px 1216px #fff, 1819px 1595px #fff, 1699px 1860px #fff, 1761px 1649px #fff,
+      1532px 1469px #fff, 1593px 1355px #fff, 1499px 1468px #fff, 1448px 1509px #fff,
+      1720px 1300px #fff, 1415px 1823px #fff, 1280px 1980px #fff, 1136px 1666px #fff,
+      1150px 1734px #fff, 1500px 1896px #fff, 1700px 1456px #fff, 1380px 1230px #fff,
+      1820px 1789px #fff, 1640px 1345px #fff, 1560px 1678px #fff, 1890px 1234px #fff,
+      920px 1456px #fff, 1240px 1789px #fff, 1560px 1234px #fff, 1780px 1567px #fff,
+      1340px 1890px #fff, 1120px 1345px #fff, 1680px 1678px #fff, 1920px 1200px #fff;
+    animation: animStar 80s linear infinite;
+  }
+
+  /* Adding larger distant stars with slower movement */
+  .stars-large {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow:
+      700px 400px rgba(255, 255, 255, 0.8), 1200px 800px rgba(255, 255, 255, 0.6),
+      1600px 200px rgba(255, 255, 255, 0.9), 400px 1200px rgba(255, 255, 255, 0.7),
+      1800px 600px rgba(255, 255, 255, 0.5), 200px 800px rgba(255, 255, 255, 0.8),
+      1400px 1400px rgba(255, 255, 255, 0.6), 800px 200px rgba(255, 255, 255, 0.9);
+    animation: animStar 120s linear infinite;
+  }
+
+  .twinkling {
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow:
+      1220px 1200px #22d3ee, 1560px 1450px #0891b2, 1890px 1789px #d97706,
+      1340px 1567px #22d3ee, 1780px 1216px #0891b2, 1699px 1860px #d97706,
+      1150px 1734px #22d3ee, 1500px 1896px #0891b2, 1700px 1456px #d97706,
+      920px 1300px #a855f7, 1640px 900px #22d3ee, 1280px 1600px #0891b2;
+    animation: animTwinkle 100s linear infinite;
+  }
+
+  @keyframes animTwinkle {
+    0%,
+    100% {
+      transform: translateY(0px);
+      opacity: 0.3;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-1000px);
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
+  }
+
+  /* Enhanced button visibility and hover effects */
+  .space-button {
+    background: rgba(8, 145, 178, 0.2);
+    border: 1px solid rgba(8, 145, 178, 0.5);
+    color: #0891b2;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .space-button:hover {
+    background: rgba(8, 145, 178, 0.3);
+    border-color: #0891b2;
+    box-shadow: 0 0 15px rgba(8, 145, 178, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .space-button.active {
+    background: rgba(8, 145, 178, 0.4);
+    border-color: #22d3ee;
+    color: #22d3ee;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  }
+
+  /* Holographic card effects */
+  .holographic-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
+    border: 1px solid rgba(8, 145, 178, 0.3);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .holographic-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(8, 145, 178, 0.1), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Enhanced data visualization effects */
+  .data-stream {
+    background: linear-gradient(90deg, transparent 0%, rgba(8, 145, 178, 0.3) 50%, transparent 100%);
+    animation: dataFlow 2s ease-in-out infinite;
+  }
+
+  @keyframes dataFlow {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+}
